@@ -11,24 +11,11 @@ data:
     profiles:
       - name: ProfileName
         pluginConfig:
-        - name: "DefaultEvictor"
-        - name: "RemovePodsViolatingInterPodAntiAffinity"
-        - name: "RemoveDuplicates"
-        - name: "LowNodeUtilization"
+        - name: "HighNodeUtilization"
           args:
             thresholds:
-              "cpu" : 20
-              "memory": 20
-              "pods": 20
-            targetThresholds:
-              "cpu" : 50
-              "memory": 50
-              "pods": 50
-        plugins:
-          balance:
-            enabled:
-              - "LowNodeUtilization"
-              - "RemoveDuplicates"
-          deschedule:
-            enabled:
-              - "RemovePodsViolatingInterPodAntiAffinity"
+                "memory": 20
+          plugins:
+            balance:
+              enabled:
+                - "HighNodeUtilization"
