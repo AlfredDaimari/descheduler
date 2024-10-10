@@ -12,17 +12,13 @@ data:
       - name: ProfileName
         pluginConfig:
         - name: "DefaultEvictor"
-        - name: "RemovePodsViolatingInterPodAntiAffinity"
         - name: "LowNodeUtilization"
           args:
             thresholds:
-              "cpu" : 35
+              "cpu": 35
            targetThresholds:
-              "cpu" : 50
+              "cpu": 50
        plugins:
-          balance:
+         balance:
             enabled:
-              - "LowNodeUtilization"
-          deschedule:
-            enabled:
-              - "RemovePodsViolatingInterPodAntiAffinity"
+              - "LowNodeUtilization" 
