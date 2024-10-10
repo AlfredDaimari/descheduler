@@ -16,9 +16,9 @@ data:
           args:
             thresholds:
               "cpu": 35
-           targetThresholds:
+            targetThresholds:
               "cpu": 50
-       plugins:
-         balance:
+        plugins:
+          balance:
             enabled:
               - "LowNodeUtilization" 
