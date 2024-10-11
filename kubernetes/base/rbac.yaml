@@ -7,6 +7,9 @@ rules:
 - apiGroups: ["events.k8s.io"]
   resources: ["events"]
   verbs: ["create", "update"]
+- apiGroups: [""]  # Core API group for nodes
+  resources: ["nodes"]
+  verbs: ["get", "list", "watch"]
 - apiGroups: ["metrics.k8s.io"]
   resources: ["nodes", "pods"]
   verbs: ["get", "watch", "list"]
